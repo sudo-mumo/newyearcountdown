@@ -18,7 +18,7 @@ class _CountDownWidgetState extends State<CountDownWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 120,
-      width: 90,
+      width: 150,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[

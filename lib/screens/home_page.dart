@@ -11,12 +11,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  DateTime newYear = DateTime.parse("2023-01-01T00:00:00");
-  Map<String, int> timeLeft = HashMap();
+  DateTime newYear = DateTime.parse("2024-01-01T00:00:00");
+  Map<String, dynamic> timeLeft = HashMap();
   bool itsNewYear = false;
   Timer? timer;
 
-  Map<String, int> mapTimeLeft(int value) {
+  Map<String, dynamic> mapTimeLeft(int value) {
     int days, hours, minutes, seconds;
 
     days = value ~/ 86400;
@@ -44,8 +44,13 @@ class _HomePageState extends State<HomePage> {
         'Days': days,
         'Hours': hours,
         'Minutes': minutes,
-        'Seconds': seconds,
+        'Seconds': seconds
       });
+      var newMap = <String, dynamic>{};
+      for (var key in ["Days", "Hours", "Minutes", "Seconds"]) {
+        if (timeLeft.containsKey(key)) newMap[key] = timeLeft[key];
+      }
+      timeLeft = newMap;
       return timeLeft;
     }
     return timeLeft;
@@ -94,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const Text(
-                    'Countdown to Year 2023',
+                    'Countdown to Year 2024',
                     style: TextStyle(
                       fontSize: 60,
                       fontWeight: FontWeight.w900,
