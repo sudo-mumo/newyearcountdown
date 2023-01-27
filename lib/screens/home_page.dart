@@ -80,6 +80,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
@@ -87,10 +88,10 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: itsNewYear
-            ? const Text(
-                'I Wish You All\nA Happy & Prosperous New Year\n2023\nCheers',
+            ? Text(
+                'I Wish You All\nA Happy & Prosperous New Year\n2024\nCheers',
                 style: TextStyle(
-                  fontSize: 60,
+                  fontSize: size.width * 0.2,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
                 ),
@@ -98,10 +99,10 @@ class _HomePageState extends State<HomePage> {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Text(
+                  Text(
                     'Countdown to Year 2024',
                     style: TextStyle(
-                      fontSize: 60,
+                      fontSize: size.width * 0.2,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
                     ),

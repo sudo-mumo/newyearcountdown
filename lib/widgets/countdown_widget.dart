@@ -16,6 +16,7 @@ class CountDownWidget extends StatefulWidget {
 class _CountDownWidgetState extends State<CountDownWidget> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SizedBox(
       height: 120,
       width: 150,
@@ -26,8 +27,8 @@ class _CountDownWidgetState extends State<CountDownWidget> {
             fit: BoxFit.fill,
             child: Text(
               widget.timeValue.toString(),
-              style: const TextStyle(
-                fontSize: 70,
+              style: TextStyle(
+                fontSize: size.width * 0.3,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -37,8 +38,8 @@ class _CountDownWidgetState extends State<CountDownWidget> {
             fit: BoxFit.fill,
             child: Text(
               widget.timeDescription,
-              style: const TextStyle(
-                fontSize: 20,
+              style: TextStyle(
+                fontSize: size.width * 0.01,
                 color: Colors.white,
               ),
             ),
