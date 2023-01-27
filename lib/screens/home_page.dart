@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     'Countdown to Year 2024',
                     style: TextStyle(
-                      fontSize: size.width * 0.2,
+                      fontSize: size.width * 0.05,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
                     ),

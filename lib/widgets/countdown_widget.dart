@@ -17,9 +17,10 @@ class _CountDownWidgetState extends State<CountDownWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return SizedBox(
-      height: 120,
-      width: 150,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      // height: 150,
+      // width: 150,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -28,7 +29,7 @@ class _CountDownWidgetState extends State<CountDownWidget> {
             child: Text(
               widget.timeValue.toString(),
               style: TextStyle(
-                fontSize: size.width * 0.3,
+                fontSize: size.width * 0.075,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -39,7 +40,7 @@ class _CountDownWidgetState extends State<CountDownWidget> {
             child: Text(
               widget.timeDescription,
               style: TextStyle(
-                fontSize: size.width * 0.01,
+                fontSize: size.width * 0.02,
                 color: Colors.white,
               ),
             ),
